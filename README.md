@@ -2,8 +2,9 @@
 
 # Vite Vanilla Three.js Template
 
-A small starter package needed to create amazing websites on three.js
+A small starter package for create amazing websites on three.js. 
 Example of a website: https://kaino-wagon.vercel.app/
+The template based on the [Bruno Simon](https://github.com/brunosimon) code.
 
 ---
 
