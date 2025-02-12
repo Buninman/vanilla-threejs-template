@@ -14,9 +14,9 @@ export default class World {
 
 		this.resources.on("groupEnd", (_group) => {
 			if (_group.name === "asset") {
-				this.addStar();
+				// this.addStar();
+				this.addModel()
 				this.addLight();
-				this.addDebug();
 			}
 		});
 	}
@@ -26,6 +26,19 @@ export default class World {
 			new THREE.MeshStandardMaterial({ color: "#4e62f9" })
 		);
 		this.scene.add(this.ico);
+	}
+	addModel() {
+		this.model = {};
+
+		// Geometry
+		this.model = this.resources.items.world.scene.children.find( (child) => child.name === "stable" );
+
+		this.model.texture = this.resources.items.worldTexture;
+		this.model.texture.flipY = false;
+		this.model.material = new THREE.MeshBasicMaterial({
+			map: this.model.texture,
+		});
+		this.scene.add(this.model);
 	}
 
 	addLight() {
@@ -40,14 +53,7 @@ export default class World {
 			this.ico.rotation.y += this.config.icoRotationSpeed;
 		}
 	}
-	addDebug() {
-		if (this.debug) {
-			this.debug.worldFolder = this.debug.addFolder({ title: "World" });
-			this.debug.worldFolder
-				.addBinding(this.config, "backgroundColor", { label: "BG" })
-				.on("change", () => {});
-		}
-	}
+
 	resize() {}
 	destroy() {}
 }

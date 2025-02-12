@@ -2,8 +2,22 @@ import * as THREE from "three";
 import EventEmitter from "./Utils/EventEmitter.js";
 import Loader from "./Utils/Loader.js";
 
+const assetsInfo = [
+	{
+		name: 'asset',
+		data: {},
+		items: [
+			// Base
+			{ name: "wagonModel", source: "/assets/wagon.glb", type: "model" },
+			{ name: "logo", source: "/assets/logo.glb", type: "model" },
+			{ name: "world", source: "/assets/world.glb", type: "model" },
+			{ name: "worldTexture", source: "/assets/world.jpg", type: "texture" },
+		]
+	},
+]
+
 export default class Resources extends EventEmitter {
-	constructor(_assets) {
+	constructor() {
 		super();
 
 		// Items (will contain every resources)
@@ -17,7 +31,7 @@ export default class Resources extends EventEmitter {
 		this.loader = new Loader({ renderer: this.renderer });
 
 		this.groups = {};
-		this.groups.assets = [..._assets];
+		this.groups.assets = [...assetsInfo];
 		this.groups.loaded = [];
 		this.groups.current = null;
 		this.loadNextGroup();
