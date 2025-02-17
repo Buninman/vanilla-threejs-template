@@ -1,5 +1,5 @@
 import EventEmitter from './EventEmitter.js'
-import Experience from '../Experience.js'
+import Experience from '../App.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'

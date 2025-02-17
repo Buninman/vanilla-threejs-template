@@ -1,15 +1,11 @@
 import * as THREE from "three";
-import Experience from "./Experience.js";
+import App from "./App.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default class Camera {
 	constructor() {
-		this.app = new Experience();
-
-		// Set up
-		// this.mode = "debug"; // defaultCamera \ debugCamera
-		// this.debugActiveCamera = true;
-
+		this.app = new App();
+		
 		this.setBasicCamera();
 		this.setOrbitControls()
 	}
@@ -21,7 +17,7 @@ export default class Camera {
 			0.1,
 			100
 		);
-		this.basicCamera.position.set(5, 5, 5)
+		this.basicCamera.position.set(0, 3, 0)
 		this.app.scene.add(this.basicCamera);
 	}
 	setOrbitControls() {

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import Experience from "./Experience.js";
+import App from "./App.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
@@ -11,14 +11,13 @@ import { CopyShader } from 'three/examples/jsm/shaders/CopyShader.js'
 
 export default class Renderer {
 	constructor() {
-		this.app = new Experience();
+		this.app = new App();
 		this.setRenderer()
-		// this.setPostProcess()
-		// this.addMotionBlurPasses()
+		this.setPostProcess()
+		this.addMotionBlurPasses()
 		// this.addUnrealBloomPass()
 		// this.addDotScreenPass()
 		// this.addDebug()
-		console.log("Renderer import!");
 	}
 
 	setRenderer() {
@@ -26,11 +25,12 @@ export default class Renderer {
 			canvas: this.app.canvas,
 			antialias: true
 		})
-		this.webGLRenderer.setClearColor('#211d20')
+		this.webGLRenderer.setClearColor('#2b2b2b')
 		this.webGLRenderer.setSize(this.app.sizes.width, this.app.sizes.height)
     this.webGLRenderer.setPixelRatio(this.app.sizes.pixelRatio)
 		// this.webGLRenderer.toneMapping = THREE.NoToneMapping
 		// this.webGLRenderer.toneMappingExposure = 1
+		this.context = this.webGLRenderer.getContext();
 	}
 
 	setPostProcess() {	
@@ -92,13 +92,8 @@ export default class Renderer {
 	// }
 
 	resize() {
-		// if (this.effectComposer) {
-		// 	this.effectComposer.setSize(this.app.sizes.width, this.app.sizes.height)
-    // 	this.effectComposer.setPixelRatio(this.app.sizes.pixelRatio)
-		// } else {
-			this.webGLRenderer.setSize(this.app.sizes.width, this.app.sizes.height)
-			this.webGLRenderer.setPixelRatio(this.app.sizes.pixelRatio)
-		// }
+		this.webGLRenderer.setSize(this.app.sizes.width, this.app.sizes.height)
+		this.webGLRenderer.setPixelRatio(this.app.sizes.pixelRatio)
 	}
 
 	update() {

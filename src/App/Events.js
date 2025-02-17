@@ -1,11 +1,9 @@
-import * as THREE from "three";
-import Experience from "./Experience.js";
+import App from "./App.js";
 
 export default class Events {
 	constructor(_options) {
-		this.app = new Experience();
+		this.app = new App();
 		this.resources = this.app.resources;
-		this.config = this.app.config;
 
 		this.setMusicButton();
 	}
