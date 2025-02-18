@@ -1,4 +1,4 @@
-![alt text](public/social/share-1200x630.jpg "preview jpg")
+![alt text](public/social/readmeApng.png "preview jpg")
 
 # Vite Vanilla Three.js Template
 
@@ -6,13 +6,21 @@ A small starter package for create amazing websites on three.js.
 Example of a website: https://kaino-wagon.vercel.app/
 The template based on the [Bruno Simon](https://github.com/brunosimon) code.
 
----
 
 ## Version 1.0
 
 2025-02
 
-The template includes an asset loader, loader, and music player. The whole template is made using classes.
+The template was created using classes
+The template includes:
+- webp format website loader
+- resource loader class
+- 3d gltf model
+- post-processing
+- music player
+- debugging panel
+- footer with contacts
+- custom cursor
 
 ---
 
