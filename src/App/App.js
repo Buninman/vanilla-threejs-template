@@ -43,8 +43,7 @@ export default class App {
 			musicSvg: document.querySelector(".musicSvg"),
 		}
 		this.colors = {
-			backgroundColor: '#211d20',
-			icoSphereColor: '#F4AFC7'
+			backgroundColor: '#000',
 		}
 	}
 
@@ -54,7 +53,8 @@ export default class App {
 			expanded: false,
 		});
 		this.debug.containerElem_.style.width = "320px";
-		this.debug.colorsFolder = this.debug.addFolder({ title: 'Colors' })
+		this.debug.folder1 = this.debug.addFolder({ title: 'Logo' })
+		this.debug.folder2 = this.debug.addFolder({ title: 'PostProcessing' })
 	}
 
 	setThreejs() {
