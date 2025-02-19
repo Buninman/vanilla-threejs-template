@@ -8,7 +8,6 @@ const assetsInfo = [
 		data: {},
 		items: [
 			// Base
-			{ name: "wagonModel", source: "/assets/wagon.glb", type: "model" },
 			{ name: "logo", source: "/assets/logo.glb", type: "model" },
 			{ name: "world", source: "/assets/world.glb", type: "model" },
 			{ name: "worldTexture", source: "/assets/world.jpg", type: "texture" },

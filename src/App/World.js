@@ -1,9 +1,8 @@
 import * as THREE from "three";
 import App from "./App.js";
-import { step } from "three/src/nodes/TSL.js";
 
 export default class World {
-	constructor(_options) {
+	constructor() {
 		this.app = new App();
 		this.resources = this.app.resources;
 		this.setConfig()
@@ -14,7 +13,7 @@ export default class World {
 				// this.addEgg()
 				this.addLogo()
 				this.addLight();
-				this.addDebug()
+				if (this.app.debug) this.addDebug()
 			}
 		});
 	}

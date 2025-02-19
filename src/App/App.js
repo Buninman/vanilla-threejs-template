@@ -89,8 +89,10 @@ export default class App {
 				this.htmlQS.footerIcons.classList.remove("unvisible");
 				setHtmlTimer("");
 				this.config.loaderIsHidden = true;
-				this.debug.title = "Play With Me";
-				this.debug.expanded = true;
+				if (this.debug) {
+					this.debug.title = "Play With Me";
+					this.debug.expanded = true;
+				}
 			}, 1000);
 		});
 	}

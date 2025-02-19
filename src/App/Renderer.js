@@ -15,7 +15,7 @@ export default class Renderer {
 		this.setConfig()
 		this.setRenderer()
 		this.setPostProcess()
-		this.addDebug()
+		if (this.app.debug) this.addDebug()
 	}
 
 	setConfig() {
